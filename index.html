@@ -1,0 +1,87 @@
+
+
+<!-- 月ごとの利用者管理UI -->
+<div id="userManagement">
+  <h2>利用者管理（月別）</h2>
+
+  <!-- 月選択 -->
+  <label for="userMonthSelect">月を選択：</label>
+  <select id="userMonthSelect"></select>
+
+  <!-- 利用者追加・保存 -->
+  <div style="margin-top:10px;">
+    <button id="addUserButton">利用者を追加</button>
+    <button id="saveToStorageButton">保存する</button>
+    <button id="importUsersButton">エクセルから利用者追加</button>
+  </div>
+
+  <!-- 検索ボックス -->
+  <input type="text" id="userSearchInput" placeholder="氏名で検索" style="margin-top:10px;">
+
+  <!-- 利用者追加フォーム -->
+  <div id="userForm" style="display:none; margin-top:10px;">
+    <input type="text" id="userName" placeholder="氏名" style="width:100px;">
+    <select id="insuranceType">
+      <option value="">保険区分</option>
+      <option value="社会保険">社会保険</option>
+      <option value="国保/後期">国保/後期</option>
+      <option value="介護">介護</option>
+      <option value="介護＋医療">介護＋医療</option>
+    </select>
+    <input type="text" id="copayRate" placeholder="負担割合">
+    <select id="publicSupport">
+      <option value="">公費区分</option>
+      <option value="自立支援医療">自立支援医療</option>
+      <option value="難病">難病</option>
+      <option value="生活保護">生活保護</option>
+      <option value="その他">その他</option>
+    </select>
+    <input type="number" id="limitAmount" placeholder="上限額">
+    <input type="number" id="publicUseAmount" placeholder="公費利用額">
+    <input type="text" id="publicCopayAmount" placeholder="公費自己負担額" disabled>
+    <select id="welfareMedical">
+      <option value="">福祉医療</option>
+      <option value="障害">障害</option>
+      <option value="精神">精神</option>
+      <option value="子">子</option>
+    </select>
+    <label><input type="checkbox" id="marufuku">丸福</label>
+    <input type="number" id="selfPay" placeholder="自己負担">
+    <input type="number" id="privatePay" placeholder="自費">
+    <select id="collectionMethod">
+      <option value="">集金方法</option>
+      <option value="現金">現金</option>
+      <option value="アプラス">アプラス</option>
+      <option value="振込">振込</option>
+    </select>
+    <button id="saveUserButton">登録</button>
+  </div>
+
+  <!-- 利用者一覧テーブル -->
+  <table id="userTable" border="1" style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>氏名</th><th>保険区分</th><th>負担割合</th><th>公費区分</th>
+        <th>上限額</th><th>公費利用額</th><th>公費自己負担額</th><th>福祉医療</th>
+        <th>丸福</th><th>自己負担</th><th>自費</th><th>集金方法</th><th>操作</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<!-- 売上集計エリア -->
+<div id="salesSummary" style="display:none;">
+  <h2>売上集計</h2>
+  <input type="file" id="fileInput">
+  <select id="monthSelect" style="margin-left:10px;"></select>
+
+  <table id="salesTable" border="1" style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>氏名</th><th>売上金額</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
